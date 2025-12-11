@@ -4,7 +4,7 @@ import { BubbleText } from "@/components/ui/bubble-text";
 import { ResumeSection } from "@/components/Resume";
 import { ScrollSection } from "@/components/ScrollSection";
 import { LeetCodeLogoButton } from "@/components/ui/leetcode-button";
-import { Github, Linkedin, Mail, Phone, Code2, Award } from "lucide-react";
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
 
 export function Home() {
   return (
