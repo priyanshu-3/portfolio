@@ -1,6 +1,5 @@
 import { ScrollSection } from "@/components/ScrollSection";
-import { Code2, Cpu, Database, Layout, ArrowLeft } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Code2, Cpu, Database, Layout } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function SkillsPage() {
@@ -13,17 +12,6 @@ export function SkillsPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
-      {/* Back Button */}
-      <div className="fixed top-6 left-6 z-50">
-        <Link
-          to="/"
-          className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-accent transition-colors backdrop-blur-sm bg-background/80"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          <span className="text-sm">Back</span>
-        </Link>
-      </div>
-
       {/* Skills Section */}
       <ScrollSection id="skills" className="py-32 px-6 min-h-screen">
         <div className="max-w-7xl mx-auto">

@@ -4,6 +4,7 @@ import { BubbleText } from "@/components/ui/bubble-text";
 import { ResumeSection } from "@/components/Resume";
 import { ScrollSection } from "@/components/ScrollSection";
 import { LeetCodeLogoButton } from "@/components/ui/leetcode-button";
+import { ContactForm } from "@/components/ui/contact-sections";
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
 
 export function Home() {
@@ -176,6 +177,9 @@ export function Home() {
           </div>
         </div>
       </ScrollSection>
+
+      {/* Contact Form */}
+      <ContactForm />
 
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-border">
