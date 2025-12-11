@@ -12,7 +12,7 @@ Modern, professional portfolio website for Priyanshu Mehra showcasing projects, 
 
 ## 🚀 Live Demo
 
-Visit the live portfolio: [Your Portfolio URL will be here]
+Visit the live portfolio: 
 
 ## 📁 Project Structure
 
@@ -83,4 +83,3 @@ http://localhost:8000
 
 ---
 
-Built with ❤️ using modern web technologies
