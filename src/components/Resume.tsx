@@ -36,8 +36,8 @@ export function ResumeSection() {
 
     // Trigger actual download
     const link = document.createElement("a");
-    link.href = "/PriyanshuResume.pdf";
-    link.download = "PriyanshuResume.pdf";
+    link.href = "/Resume Mehra Priyanshu.pdf";
+    link.download = "Resume_Mehra_Priyanshu.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -61,7 +61,7 @@ export function ResumeSection() {
         }
       >
         <iframe
-          src="/PriyanshuResume.pdf#view=FitH&zoom=page-width"
+          src="/Resume Mehra Priyanshu.pdf#view=FitH&zoom=page-width"
           className="w-full h-full rounded-lg"
           title="Priyanshu Mehra Resume"
         />
