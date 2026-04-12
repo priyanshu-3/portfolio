@@ -1,4 +1,4 @@
-import { Home, User, Code2, Mail } from "lucide-react";
+import { Home, User, Code2, Mail, FolderKanban } from "lucide-react";
 import { AnimeNavBar } from "@/components/ui/anime-navbar";
 
 export function Navigation() {
@@ -18,6 +18,11 @@ export function Navigation() {
       name: "Skills",
       url: "/skills",
       icon: Code2,
+    },
+    {
+      name: "Projects",
+      url: "/projects",
+      icon: FolderKanban,
     },
     {
       name: "Contact",
