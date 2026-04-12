@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Home } from "@/pages/Home";
 import { SkillsPage } from "@/pages/SkillsPage";
+import { ProjectsPage } from "@/pages/ProjectsPage";
 import { useEffect } from "react";
 
 function ScrollToHashElement() {
@@ -34,6 +35,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/skills" element={<SkillsPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
       </Routes>
     </BrowserRouter>
   );
