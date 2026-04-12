@@ -1,4 +1,5 @@
 import { ScrollSection } from "@/components/ScrollSection";
+import { type Variants } from "framer-motion";
 import { motion } from "framer-motion";
 import { Github, ExternalLink, Code2 } from "lucide-react";
 
@@ -73,7 +74,7 @@ const projects: Project[] = [
 
 ];
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -82,7 +83,7 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
