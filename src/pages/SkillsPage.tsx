@@ -4,10 +4,22 @@ import { motion } from "framer-motion";
 
 export function SkillsPage() {
   const skills = [
-    { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS", "Next.js"] },
-    { category: "Backend", items: ["Node.js", "Python", "Java", "MongoDB"] },
-    { category: "Blockchain", items: ["Solidity", "Web3.js", "Smart Contracts", "DApps"] },
-    { category: "Tools", items: ["Git", "Docker", "AWS", "Figma"] },
+    {
+      category: "Frontend",
+      items: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Redux"],
+    },
+    {
+      category: "Backend (The Core)",
+      items: ["Java (Core & Advanced)", "Spring Boot", "Spring Microservices", "Hibernate / JPA", "PostgreSQL / MySQL", "MongoDB"],
+    },
+    {
+      category: "Blockchain",
+      items: ["Solidity", "Smart Contracts", "DApps", "Hardhat / Foundry"],
+    },
+    {
+      category: "Tools & DevOps",
+      items: ["Git", "Docker", "AWS", "Kubernetes", "Maven / Gradle"],
+    },
   ];
 
   return (
@@ -75,9 +87,10 @@ export function SkillsPage() {
             <h3 className="text-2xl font-bold text-center mb-8">Technologies I Work With</h3>
             <div className="flex flex-wrap justify-center gap-4">
               {[
-                'React', 'Node.js', 'TypeScript', 'Python', 'Java', 'MongoDB',
-                'Solidity', 'Next.js', 'Tailwind CSS', 'Git', 'Docker', 'AWS',
-                'Web3.js', 'Smart Contracts', 'DApps', 'Figma'
+                'React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Redux',
+                'Java', 'Spring Boot', 'Spring Microservices', 'Hibernate / JPA', 'PostgreSQL', 'MySQL', 'MongoDB',
+                'Solidity', 'Smart Contracts', 'DApps', 'Hardhat / Foundry',
+                'Git', 'Docker', 'AWS', 'Kubernetes', 'Maven / Gradle'
               ].map((tech, index) => (
                 <motion.div
                   key={tech}
