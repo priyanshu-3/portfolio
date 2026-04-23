@@ -48,7 +48,7 @@ const projects: Project[] = [
       "Beautiful travel agency landing page with smooth animations, responsive design, and interactive destination showcases. Built with vanilla JavaScript and CSS, and deployed live on Vercel.",
     tags: ["JavaScript", "CSS", "HTML", "Vercel"],
     github: "https://github.com/priyanshu-3/travelAgency",
-    live: "https://travel-agency-nu-nine.vercel.app",
+    live: "https://travel-agency-git-main-priyanshus-projects-c12e86e2.vercel.app",
     gradient: "from-emerald-500/20 via-green-500/10 to-transparent",
     emoji: "✈️",
   },
