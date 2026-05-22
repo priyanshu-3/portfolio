@@ -2,6 +2,7 @@ import { ScrollSection } from "@/components/ScrollSection";
 import { type Variants } from "framer-motion";
 import { motion } from "framer-motion";
 import { Github, ExternalLink, Code2 } from "lucide-react";
+import { GlowCard } from "@/components/ui/spotlight-card";
 
 interface Project {
   title: string;
@@ -108,11 +109,8 @@ export function ProjectsPage() {
             <p className="text-sm text-muted-foreground uppercase tracking-widest mb-4">
               Built by Priyanshu Mehra
             </p>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              My{" "}
-              <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                Projects
-              </span>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
+              My Projects
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               Real projects from my GitHub — spanning AI, Computer Vision, Full-Stack Development,
@@ -127,71 +125,89 @@ export function ProjectsPage() {
             animate="visible"
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                variants={cardVariants}
-                whileHover={{ y: -8, scale: 1.01 }}
-                className="group relative flex flex-col rounded-2xl border border-border bg-card overflow-hidden transition-all duration-300 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10"
-              >
-                {/* Gradient accent */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-60 pointer-events-none`}
-                />
+            {projects.map((project, index) => {
+              // Map project to glow colors based on index or title
+              const glowColor = 
+                index % 5 === 0 ? "red" :
+                index % 5 === 1 ? "purple" :
+                index % 5 === 2 ? "blue" :
+                index % 5 === 3 ? "green" : "orange";
 
-                {/* Card content */}
-                <div className="relative z-10 p-7 flex flex-col h-full">
-                  {/* Emoji */}
-                  <div className="text-5xl mb-5 select-none">{project.emoji}</div>
-
-                  {/* Title */}
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-200">
-                    {project.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">
-                    {project.description}
-                  </p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs font-medium px-3 py-1 rounded-full border border-border bg-background/60 text-muted-foreground"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Links */}
-                  <div className="flex items-center gap-3 mt-auto flex-wrap">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 hover:border-primary/40 transition-all duration-200"
+              return (
+                <motion.div
+                  key={index}
+                  variants={cardVariants}
+                  className="h-full"
+                >
+                  <div className="relative h-full">
+                    <GlowCard
+                      customSize={true}
+                      glowColor={glowColor}
+                      className="!rounded-3xl !bg-black/40 backdrop-blur-xl h-full !p-0"
                     >
-                      <Github className="w-4 h-4" />
-                      GitHub
-                    </a>
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg border border-border hover:border-primary/40 hover:bg-accent transition-all duration-200"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        Live Demo
-                      </a>
-                    )}
+                      {/* Gradient accent overlay (static) */}
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-[0.05] pointer-events-none`}
+                      />
+
+                      {/* Card content */}
+                      <div className="relative z-10 p-7 flex flex-col h-full">
+                        {/* Emoji */}
+                        <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-4xl select-none">
+                          {project.emoji}
+                        </div>
+
+                        {/* Title */}
+                        <h3 className="text-xl font-bold mb-3 text-white">
+                          {project.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-sm text-white/50 leading-relaxed mb-6 flex-1">
+                          {project.description}
+                        </p>
+
+                        {/* Tags */}
+                        <div className="flex flex-wrap gap-2 mb-6">
+                          {project.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="text-xs font-medium px-3 py-1 rounded-full border border-white/10 bg-white/5 text-white/70"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+
+                        {/* Links */}
+                        <div className="flex items-center gap-3 mt-auto flex-wrap">
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-white/20 transition-all duration-200"
+                          >
+                            <Github className="w-4 h-4" />
+                            GitHub
+                          </a>
+                          {project.live && (
+                            <a
+                              href={project.live}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg border border-white/10 hover:border-white/20 hover:bg-white/5 text-white transition-all duration-200"
+                            >
+                              <ExternalLink className="w-4 h-4" />
+                              Live Demo
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    </GlowCard>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </motion.div>
 
           {/* CTA */}

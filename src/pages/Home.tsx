@@ -152,6 +152,7 @@ export function Home() {
         </div>
       </ScrollSection>
 
+
       {/* Contact Section */}
       <ScrollSection id="contact" className="py-20 px-6">
         <div className="max-w-7xl mx-auto text-center">
