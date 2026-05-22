@@ -1,5 +1,5 @@
 import { Home, User, Code2, Mail, FolderKanban } from "lucide-react";
-import { AnimeNavBar } from "@/components/ui/anime-navbar";
+import { NavMenu } from "@/components/ui/menu-hover-effects";
 
 export function Navigation() {
   const navItems = [
@@ -32,5 +32,5 @@ export function Navigation() {
     },
   ];
 
-  return <AnimeNavBar items={navItems} defaultActive="Home" />;
+  return <NavMenu items={navItems} />;
 }
