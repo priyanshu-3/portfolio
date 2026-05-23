@@ -12,7 +12,7 @@ type SpotlightProps = {
 export function Spotlight({
   className,
   size = 400,
-  springOptions = { bounce: 0 },
+  springOptions = { stiffness: 500, damping: 30, mass: 0.5 },
 }: SpotlightProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
