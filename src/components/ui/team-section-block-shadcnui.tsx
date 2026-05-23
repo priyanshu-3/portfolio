@@ -2,15 +2,9 @@ import { Badge } from "@/components/ui/badge";
 import { GlowCard } from "@/components/ui/spotlight-card";
 import {
   motion,
-  useMotionValue,
-  useReducedMotion,
-  useSpring,
-  useTransform,
   type Variants,
 } from "framer-motion";
 import { Sparkles } from "lucide-react";
-import { useState } from "react";
-import { Waves } from "@/components/ui/wave-background";
 
 /* ─────────────────────────────────────────────
    Skill categories data
@@ -162,8 +156,6 @@ function SkillCategoryCard({
    Main exported section
    ───────────────────────────────────────────── */
 export function SkillSectionBlock() {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
     <section
       aria-labelledby="skills-heading"

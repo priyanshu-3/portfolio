@@ -103,7 +103,7 @@ export const TestimonialStack = ({ testimonials, visibleBehind = 2 }: Testimonia
           
         return (
           <div
-            ref={el => cardRefs.current[index] = el}
+            ref={el => { cardRefs.current[index] = el; }}
             key={testimonial.id}
             className={`absolute top-0 left-0 w-full rounded-3xl border border-white/10 bg-black/60 backdrop-blur-3xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_8px_32px_rgba(0,0,0,0.8)] cursor-grab origin-bottom ${isDragging && isActive ? 'transition-none cursor-grabbing' : 'transition-all duration-500 ease-out'}`}
             style={style} // Apply dynamic styles here
