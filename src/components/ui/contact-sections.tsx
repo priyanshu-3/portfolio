@@ -103,6 +103,7 @@ export function ContactForm() {
             const publicKey = 'oc2wybL_N8-xX8oU5';
 
             const templateParams = {
+                title: `New message from ${formData.firstName} ${formData.lastName}`,
                 name: `${formData.firstName} ${formData.lastName}`,
                 email: formData.email,
                 time: new Date().toLocaleString(),
