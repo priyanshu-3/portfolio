@@ -98,7 +98,7 @@ export function ContactForm() {
 
         try {
             // EmailJS configuration
-            const serviceId = 'service_lpxfdbk';
+            const serviceId = 'service_pd0mo4f';
             const templateId = 'template_aicii8d';
             const publicKey = 'oc2wybL_N8-xX8oU5';
 
