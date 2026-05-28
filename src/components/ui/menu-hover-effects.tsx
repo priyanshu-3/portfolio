@@ -15,100 +15,86 @@ interface NavMenuProps {
 
 export function NavMenu({ items }: NavMenuProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black">
-      {/* Mobile menu toggle button - only visible on small screens */}
-      <button 
-        onClick={toggleMenu}
-        className="md:hidden absolute top-4 right-6 z-20 p-2"
-        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-      >
-        <div className={`w-6 h-0.5 bg-white mb-1.5 transition-transform duration-300 ${isMenuOpen ? 'transform rotate-45 translate-y-2' : ''}`}></div>
-        <div className={`w-6 h-0.5 bg-white mb-1.5 transition-opacity duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></div>
-        <div className={`w-6 h-0.5 bg-white transition-transform duration-300 ${isMenuOpen ? 'transform -rotate-45 -translate-y-2' : ''}`}></div>
-      </button>
-      
-      {/* Menu container - adapts to screen size */}
-      <div className={`
-        flex items-center justify-center w-full
-        md:block md:h-auto md:py-4
-        ${isMenuOpen ? 'block h-screen bg-black/90 backdrop-blur-md pt-24' : 'hidden md:block'}
-      `}>
-        <ul className={`
-          flex flex-col items-center space-y-6
-          md:flex-row md:space-y-0 md:space-x-4 md:justify-center
-          lg:space-x-8
-        `}>
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black border-b border-white/10">
+
+      {/* ── Top bar — always visible ── */}
+      <div className="flex items-center justify-between px-6 h-16">
+
+        {/* Logo */}
+        <Link to="/" onClick={closeMenu} className="text-white font-bold text-xl tracking-tight">
+          Priyanshu<span className="text-blue-400">.</span>
+        </Link>
+
+        {/* Desktop links */}
+        <ul className="hidden md:flex items-center space-x-2">
           {items.map((item) => (
             <li key={item.name} className="list-none">
               {item.isExternal ? (
-                <a 
-                  href={item.url} 
-                  className="relative inline-block group"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <span className="
-                    relative z-10 flex items-center gap-2 uppercase text-white/80 
-                    font-sans font-semibold transition-colors duration-300 
-                    group-hover:text-black
-                    text-xl py-2 px-3
-                    md:text-sm md:py-2 md:px-3
-                    lg:text-base lg:py-2 lg:px-4
-                  ">
+                <a href={item.url} onClick={closeMenu} className="relative inline-block group">
+                  <span className="relative z-10 flex items-center gap-2 uppercase text-white/80 font-semibold transition-colors duration-300 group-hover:text-black text-sm py-2 px-4 lg:text-base">
                     <item.icon className="w-4 h-4 hidden lg:block" />
                     {item.name}
                   </span>
-                  {/* Top & bottom border animation */}
-                  <span className="
-                    absolute inset-0 border-t-2 border-b-2 border-white
-                    transform scale-y-[2] opacity-0 
-                    transition-all duration-300 origin-center
-                    group-hover:scale-y-100 group-hover:opacity-100
-                  " />
-                  {/* Background fill animation */}
-                  <span className="
-                    absolute top-[2px] left-0 w-full h-full bg-white
-                    transform scale-0 opacity-0
-                    transition-all duration-300 origin-top
-                    group-hover:scale-100 group-hover:opacity-100
-                  " />
+                  <span className="absolute inset-0 border-t-2 border-b-2 border-white transform scale-y-[2] opacity-0 transition-all duration-300 origin-center group-hover:scale-y-100 group-hover:opacity-100" />
+                  <span className="absolute top-[2px] left-0 w-full h-full bg-white transform scale-0 opacity-0 transition-all duration-300 origin-top group-hover:scale-100 group-hover:opacity-100" />
                 </a>
               ) : (
-                <Link 
-                  to={item.url} 
-                  className="relative inline-block group"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <span className="
-                    relative z-10 flex items-center gap-2 uppercase text-white/80 
-                    font-sans font-semibold transition-colors duration-300 
-                    group-hover:text-black
-                    text-xl py-2 px-3
-                    md:text-sm md:py-2 md:px-3
-                    lg:text-base lg:py-2 lg:px-4
-                  ">
+                <Link to={item.url} onClick={closeMenu} className="relative inline-block group">
+                  <span className="relative z-10 flex items-center gap-2 uppercase text-white/80 font-semibold transition-colors duration-300 group-hover:text-black text-sm py-2 px-4 lg:text-base">
                     <item.icon className="w-4 h-4 hidden lg:block" />
                     {item.name}
                   </span>
-                  {/* Top & bottom border animation */}
-                  <span className="
-                    absolute inset-0 border-t-2 border-b-2 border-white
-                    transform scale-y-[2] opacity-0 
-                    transition-all duration-300 origin-center
-                    group-hover:scale-y-100 group-hover:opacity-100
-                  " />
-                  {/* Background fill animation */}
-                  <span className="
-                    absolute top-[2px] left-0 w-full h-full bg-white
-                    transform scale-0 opacity-0
-                    transition-all duration-300 origin-top
-                    group-hover:scale-100 group-hover:opacity-100
-                  " />
+                  <span className="absolute inset-0 border-t-2 border-b-2 border-white transform scale-y-[2] opacity-0 transition-all duration-300 origin-center group-hover:scale-y-100 group-hover:opacity-100" />
+                  <span className="absolute top-[2px] left-0 w-full h-full bg-white transform scale-0 opacity-0 transition-all duration-300 origin-top group-hover:scale-100 group-hover:opacity-100" />
+                </Link>
+              )}
+            </li>
+          ))}
+        </ul>
+
+        {/* Hamburger — mobile only */}
+        <button
+          onClick={toggleMenu}
+          className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none"
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+        >
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 origin-center ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'opacity-0 scale-x-0' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 origin-center ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+        </button>
+      </div>
+
+      {/* ── Mobile dropdown ── */}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <ul className="flex flex-col bg-black/95 backdrop-blur-md border-t border-white/10 px-6 py-3 space-y-1">
+          {items.map((item) => (
+            <li key={item.name} className="list-none">
+              {item.isExternal ? (
+                <a
+                  href={item.url}
+                  onClick={closeMenu}
+                  className="flex items-center gap-3 text-white/70 hover:text-white font-semibold uppercase tracking-widest text-sm py-3 px-2 border-b border-white/5 transition-colors duration-200"
+                >
+                  <item.icon className="w-4 h-4 text-blue-400 shrink-0" />
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  to={item.url}
+                  onClick={closeMenu}
+                  className="flex items-center gap-3 text-white/70 hover:text-white font-semibold uppercase tracking-widest text-sm py-3 px-2 border-b border-white/5 transition-colors duration-200"
+                >
+                  <item.icon className="w-4 h-4 text-blue-400 shrink-0" />
+                  {item.name}
                 </Link>
               )}
             </li>
