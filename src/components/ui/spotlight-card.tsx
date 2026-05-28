@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, ReactNode } from 'react';
+import React, { useEffect, useRef, ReactNode, useState } from 'react';
 
 interface GlowCardProps {
   children?: ReactNode;
@@ -36,10 +36,16 @@ const GlowCard: React.FC<GlowCardProps> = ({
   const cardRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
 
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
   useEffect(() => {
+    // Detect touch device — skip glow tracking on mobile to allow scrolling
+    const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+    setIsTouchDevice(isTouch);
+    if (isTouch) return; // Don't add pointer listener on touch devices
+
     const syncPointer = (e: PointerEvent) => {
       const { clientX: x, clientY: y } = e;
-      
       if (cardRef.current) {
         cardRef.current.style.setProperty('--x', x.toFixed(2));
         cardRef.current.style.setProperty('--xp', (x / window.innerWidth).toFixed(2));
@@ -87,7 +93,8 @@ const GlowCard: React.FC<GlowCardProps> = ({
       backgroundAttachment: 'fixed',
       border: 'var(--border-size) solid var(--backup-border)',
       position: 'relative',
-      touchAction: 'none',
+      // Only block touch on desktop — on mobile let scroll pass through
+      touchAction: isTouchDevice ? 'auto' : 'none',
     };
 
     // Add width and height if provided
