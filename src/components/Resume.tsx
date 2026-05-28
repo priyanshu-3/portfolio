@@ -44,7 +44,7 @@ export function ResumeSection() {
   };
 
   return (
-    <section id="resume" className="py-20">
+    <section id="resume" className="py-4 md:py-20">
       <ContainerScroll
         titleComponent={
           <div className="space-y-6">
