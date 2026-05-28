@@ -29,44 +29,24 @@ export const ContainerScroll = ({
   }, []);
 
   const scaleDimensions = () => {
-    return isMobile ? [0.7, 0.9] : [1.05, 1];
+    return isMobile ? [0.85, 1] : [1.05, 1];
   };
 
-  const rotate = useTransform(scrollYProgress, [0, 1], [20, 0]);
+  const rotate = useTransform(scrollYProgress, [0, 1], isMobile ? [10, 0] : [20, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
-  const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const translate = useTransform(scrollYProgress, [0, 1], [0, isMobile ? -40 : -100]);
 
-  // ── Mobile: clean layout, no 3D animation ──
-  if (isMobile) {
-    return (
-      <div className="flex flex-col items-center px-4 pt-4 pb-4 gap-4">
-        {/* Title + download button */}
-        <div className="w-full text-center">{titleComponent}</div>
-
-        {/* Resume card — full width, no rotation */}
-        <div className="w-full rounded-2xl border border-white/10 bg-[#222222] p-2 shadow-2xl">
-          <div className="w-full overflow-hidden rounded-xl bg-white" style={{ height: "82vh" }}>
-            {children}
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // ── Desktop: full 3D scroll animation ──
   return (
     <div
-      className="h-[60rem] md:h-[80rem] flex items-center justify-center relative p-2 md:p-20"
+      className="h-[50rem] md:h-[80rem] flex items-center justify-center relative p-2 md:p-20"
       ref={containerRef}
     >
       <div
-        className="py-10 md:py-40 w-full relative"
-        style={{
-          perspective: "1000px",
-        }}
+        className="py-6 md:py-40 w-full relative"
+        style={{ perspective: "1000px" }}
       >
         <Header translate={translate} titleComponent={titleComponent} />
-        <Card rotate={rotate} translate={translate} scale={scale}>
+        <Card rotate={rotate} translate={translate} scale={scale} isMobile={isMobile}>
           {children}
         </Card>
       </div>
@@ -77,10 +57,8 @@ export const ContainerScroll = ({
 export const Header = ({ translate, titleComponent }: any) => {
   return (
     <motion.div
-      style={{
-        translateY: translate,
-      }}
-      className="div max-w-5xl mx-auto text-center"
+      style={{ translateY: translate }}
+      className="max-w-5xl mx-auto text-center"
     >
       {titleComponent}
     </motion.div>
@@ -90,11 +68,13 @@ export const Header = ({ translate, titleComponent }: any) => {
 export const Card = ({
   rotate,
   scale,
+  isMobile,
   children,
 }: {
   rotate: MotionValue<number>;
   scale: MotionValue<number>;
   translate: MotionValue<number>;
+  isMobile?: boolean;
   children: React.ReactNode;
 }) => {
   return (
@@ -102,12 +82,16 @@ export const Card = ({
       style={{
         rotateX: rotate,
         scale,
+        height: isMobile ? "38rem" : undefined,
         boxShadow:
           "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
       }}
-      className="max-w-5xl -mt-12 mx-auto h-[50rem] md:h-[65rem] lg:h-[75rem] w-full border-4 border-[#6C6C6C] p-4 md:p-10 bg-[#222222] rounded-[30px] shadow-2xl"
+      className="max-w-5xl -mt-8 md:-mt-12 mx-auto w-full border-4 border-[#6C6C6C] p-2 md:p-10 bg-[#222222] rounded-[20px] md:rounded-[30px] shadow-2xl"
     >
-      <div className="h-full w-full overflow-hidden rounded-2xl bg-white md:rounded-2xl md:p-6">
+      <div
+        className="h-full w-full overflow-hidden rounded-xl bg-white md:rounded-2xl md:p-6"
+        style={{ height: isMobile ? "34rem" : undefined }}
+      >
         {children}
       </div>
     </motion.div>
