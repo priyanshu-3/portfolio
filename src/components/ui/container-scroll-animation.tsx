@@ -39,13 +39,13 @@ export const ContainerScroll = ({
   // ── Mobile: clean layout, no 3D animation ──
   if (isMobile) {
     return (
-      <div className="flex flex-col items-center px-4 py-10 gap-8">
+      <div className="flex flex-col items-center px-4 pt-4 pb-4 gap-4">
         {/* Title + download button */}
         <div className="w-full text-center">{titleComponent}</div>
 
         {/* Resume card — full width, no rotation */}
-        <div className="w-full rounded-2xl border border-white/10 bg-[#222222] p-3 shadow-2xl">
-          <div className="w-full overflow-hidden rounded-xl bg-white" style={{ height: "75vh" }}>
+        <div className="w-full rounded-2xl border border-white/10 bg-[#222222] p-2 shadow-2xl">
+          <div className="w-full overflow-hidden rounded-xl bg-white" style={{ height: "82vh" }}>
             {children}
           </div>
         </div>
