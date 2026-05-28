@@ -82,7 +82,7 @@ export function NavMenu({ items }: NavMenuProps) {
                   onClick={closeMenu}
                   className="flex items-center gap-3 text-white/70 hover:text-white font-semibold uppercase tracking-widest text-sm py-3 px-2 border-b border-white/5 transition-colors duration-200"
                 >
-                  <item.icon className="w-4 h-4 text-blue-400 shrink-0" />
+                  <item.icon className="w-4 h-4 text-white shrink-0" />
                   {item.name}
                 </a>
               ) : (
