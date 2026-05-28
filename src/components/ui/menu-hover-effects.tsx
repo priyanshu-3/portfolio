@@ -22,16 +22,9 @@ export function NavMenu({ items }: NavMenuProps) {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black border-b border-white/10">
 
-      {/* ── Top bar — always visible ── */}
-      <div className="flex items-center justify-between px-6 h-16">
-
-        {/* Logo */}
-        <Link to="/" onClick={closeMenu} className="text-white font-bold text-xl tracking-tight">
-          Priyanshu<span className="text-blue-400">.</span>
-        </Link>
-
-        {/* Desktop links */}
-        <ul className="hidden md:flex items-center space-x-2">
+      {/* ── Desktop: fully centered nav links, no logo ── */}
+      <div className="hidden md:flex items-center justify-center h-16">
+        <ul className="flex items-center space-x-2">
           {items.map((item) => (
             <li key={item.name} className="list-none">
               {item.isExternal ? (
@@ -56,11 +49,16 @@ export function NavMenu({ items }: NavMenuProps) {
             </li>
           ))}
         </ul>
+      </div>
 
-        {/* Hamburger — mobile only */}
+      {/* ── Mobile: logo on left + hamburger on right ── */}
+      <div className="flex md:hidden items-center justify-between px-6 h-16">
+        <Link to="/" onClick={closeMenu} className="text-white font-bold text-xl tracking-tight">
+          Priyanshu<span className="text-blue-400">.</span>
+        </Link>
         <button
           onClick={toggleMenu}
-          className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none"
+          className="flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none"
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         >
           <span className={`block w-6 h-0.5 bg-white transition-all duration-300 origin-center ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
