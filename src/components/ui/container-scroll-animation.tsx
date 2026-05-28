@@ -36,6 +36,24 @@ export const ContainerScroll = ({
   const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
   const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
+  // ── Mobile: clean layout, no 3D animation ──
+  if (isMobile) {
+    return (
+      <div className="flex flex-col items-center px-4 py-10 gap-8">
+        {/* Title + download button */}
+        <div className="w-full text-center">{titleComponent}</div>
+
+        {/* Resume card — full width, no rotation */}
+        <div className="w-full rounded-2xl border border-white/10 bg-[#222222] p-3 shadow-2xl">
+          <div className="w-full overflow-hidden rounded-xl bg-white" style={{ height: "75vh" }}>
+            {children}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // ── Desktop: full 3D scroll animation ──
   return (
     <div
       className="h-[60rem] md:h-[80rem] flex items-center justify-center relative p-2 md:p-20"
@@ -95,4 +113,3 @@ export const Card = ({
     </motion.div>
   );
 };
-
