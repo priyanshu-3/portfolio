@@ -5,7 +5,7 @@ import { ResumeSection } from "@/components/Resume";
 import { ScrollSection } from "@/components/ScrollSection";
 import { LeetCodeLogoButton } from "@/components/ui/leetcode-button";
 import { CallToActionSection } from "@/components/CallToAction";
-import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function Home() {

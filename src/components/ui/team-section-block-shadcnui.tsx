@@ -4,7 +4,7 @@ import {
   motion,
   type Variants,
 } from "framer-motion";
-import { Sparkles } from "lucide-react";
+
 
 /* ─────────────────────────────────────────────
    Skill categories data
