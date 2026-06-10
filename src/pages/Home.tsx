@@ -4,8 +4,9 @@ import { BubbleText } from "@/components/ui/bubble-text";
 import { ResumeSection } from "@/components/Resume";
 import { ScrollSection } from "@/components/ScrollSection";
 import { LeetCodeLogoButton } from "@/components/ui/leetcode-button";
-import { ContactForm } from "@/components/ui/contact-sections";
+import { CallToActionSection } from "@/components/CallToAction";
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function Home() {
   return (
@@ -51,12 +52,12 @@ export function Home() {
               >
                 View My Work
               </a>
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 className="px-6 py-3 border border-border rounded-lg hover:bg-accent transition-colors hover:scale-105 pointer-events-auto"
               >
-                Get In Touch
-              </a>
+                Start a Project
+              </Link>
             </div>
             <div className="flex items-center justify-center gap-4 pt-8">
               <a
@@ -80,7 +81,7 @@ export function Home() {
                 />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/priyanshu-mehra-060070245/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 hover:text-primary transition-colors hover:scale-110 pointer-events-auto"
@@ -98,15 +99,15 @@ export function Home() {
           <h2 className="text-4xl font-bold text-center mb-12">About Me</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="p-6 rounded-xl border border-border bg-card">
-              <div className="text-3xl font-bold text-primary mb-2">3+</div>
+              <div className="text-3xl font-bold text-primary mb-2">1+</div>
               <div className="text-muted-foreground">Years Experience</div>
             </div>
             <div className="p-6 rounded-xl border border-border bg-card">
-              <div className="text-3xl font-bold text-primary mb-2">10+</div>
+              <div className="text-3xl font-bold text-primary mb-2">5+</div>
               <div className="text-muted-foreground">Projects Completed</div>
             </div>
             <div className="p-6 rounded-xl border border-border bg-card">
-              <div className="text-3xl font-bold text-primary mb-2">10+</div>
+              <div className="text-3xl font-bold text-primary mb-2">8+</div>
               <div className="text-muted-foreground">Technologies</div>
             </div>
           </div>
@@ -153,34 +154,8 @@ export function Home() {
       </ScrollSection>
 
 
-      {/* Contact Section */}
-      <ScrollSection id="contact" className="py-20 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
-          <p className="text-muted-foreground mb-12">
-            Let's discuss your next project or collaboration
-          </p>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-            <a
-              href="mailto:mehrapriyansh33@gmail.com"
-              className="flex items-center gap-2 px-6 py-3 border border-border rounded-lg hover:bg-accent transition-colors"
-            >
-              <Mail className="w-5 h-5" />
-              mehrapriyansh33@gmail.com
-            </a>
-            <a
-              href="tel:+918449915251"
-              className="flex items-center gap-2 px-6 py-3 border border-border rounded-lg hover:bg-accent transition-colors"
-            >
-              <Phone className="w-5 h-5" />
-              +91 8449915251
-            </a>
-          </div>
-        </div>
-      </ScrollSection>
-
-      {/* Contact Form */}
-      <ContactForm />
+      {/* Call To Action Section */}
+      <CallToActionSection />
 
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-border">

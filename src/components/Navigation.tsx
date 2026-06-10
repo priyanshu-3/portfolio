@@ -26,9 +26,8 @@ export function Navigation() {
     },
     {
       name: "Contact",
-      url: "/#contact",
+      url: "/contact",
       icon: Mail,
-      isExternal: true,
     },
   ];
 

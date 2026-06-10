@@ -106,10 +106,7 @@ function SkillCategoryCard({
           />
 
           <div className="relative z-10 p-7">
-            {/* Emoji icon */}
-            <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-4xl">
-              {cat.emoji}
-            </div>
+            {/* Emoji icon removed */}
 
             {/* Title & subtitle */}
             <div className="mb-1">
@@ -159,7 +156,7 @@ export function SkillSectionBlock() {
   return (
     <section
       aria-labelledby="skills-heading"
-      className="relative w-full overflow-hidden bg-black px-4 pt-24 pb-24 sm:px-6 lg:px-10"
+      className="relative w-full h-full flex flex-col justify-center overflow-hidden bg-black px-4 sm:px-6 lg:px-10"
     >
 
       <div className="mx-auto max-w-6xl">
@@ -170,15 +167,7 @@ export function SkillSectionBlock() {
           transition={{ duration: 0.7, ease: [0.6, 0.05, 0.01, 0.9] }}
           className="mb-16 text-center"
         >
-          <motion.div className="mb-5 inline-block">
-            <Badge
-              className="gap-2 border border-white/10 bg-white/5 text-white/50 backdrop-blur"
-              variant="secondary"
-            >
-              <Sparkles className="h-3 w-3" aria-hidden />
-              What I work with
-            </Badge>
-          </motion.div>
+
 
           <motion.h1
             id="skills-heading"

@@ -152,13 +152,8 @@ export function ProjectsPage() {
 
                       {/* Card content */}
                       <div className="relative z-10 p-7 flex flex-col h-full">
-                        {/* Emoji */}
-                        <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-4xl select-none">
-                          {project.emoji}
-                        </div>
-
                         {/* Title */}
-                        <h3 className="text-xl font-bold mb-3 text-white">
+                        <h3 className="text-2xl font-extrabold mb-4 text-white">
                           {project.title}
                         </h3>
 

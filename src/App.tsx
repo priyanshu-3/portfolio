@@ -29,6 +29,8 @@ function ScrollToHashElement() {
   return null;
 }
 
+import { ContactPage } from "@/pages/ContactPage";
+
 function AnimatedRoutes() {
   const location = useLocation();
   
@@ -38,18 +40,28 @@ function AnimatedRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/skills" element={<SkillsPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </AnimatePresence>
   );
 }
 
 function App() {
-  const [showSplash, setShowSplash] = useState(true);
+  const [showSplash, setShowSplash] = useState(() => {
+    // Only show splash on first visit or hard refresh, not on navigation
+    const hasSeenSplash = sessionStorage.getItem('hasSeenSplash');
+    return !hasSeenSplash;
+  });
+
+  const handleSplashComplete = () => {
+    sessionStorage.setItem('hasSeenSplash', 'true');
+    setShowSplash(false);
+  };
 
   return (
     <>
       <AnimatePresence mode="wait">
-        {showSplash && <SplashScreen key="splash" onComplete={() => setShowSplash(false)} />}
+        {showSplash && <SplashScreen key="splash" onComplete={handleSplashComplete} />}
       </AnimatePresence>
 
       <BrowserRouter>
