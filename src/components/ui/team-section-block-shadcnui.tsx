@@ -156,7 +156,7 @@ export function SkillSectionBlock() {
   return (
     <section
       aria-labelledby="skills-heading"
-      className="relative w-full h-full flex flex-col justify-center overflow-hidden bg-black px-4 sm:px-6 lg:px-10"
+      className="relative w-full overflow-hidden bg-black px-4 pt-24 pb-24 sm:px-6 lg:px-10"
     >
 
       <div className="mx-auto max-w-6xl">
