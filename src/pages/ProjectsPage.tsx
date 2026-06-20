@@ -16,63 +16,32 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "SkinCare – AI Skin Disease Platform",
+    title: "Shishu-Sneh (Smart Baby's First Year Guide)",
     description:
-      "Full-stack web platform for skin disease detection powered by a deep learning model. Features a React + JavaScript frontend with real-time image analysis, a Python/Flask backend, and Dockerized deployment. Bridges AI with a practical healthcare interface.",
-    tags: ["JavaScript", "Python", "React", "Flask", "Docker", "CSS"],
-    github: "https://github.com/priyanshu-3/SkinCare",
+      "Engineered an offline-first infant healthcare app utilizing Room DB and Supabase PostgreSQL for local persistence and cloud sync. Developed a Spring Boot backend to automate immunization tracking against the Indian NIS via Android WorkManager notifications. Integrated Google Gemini API to build a dynamic nutrition engine processing real-time user ingredients for localized recipes. Implemented data visualization dashboards using MPAndroidChart to parse health logs and render growth trends.",
+    tags: ["Spring Boot", "Android Native", "Room DB", "Supabase", "Gemini API"],
+    github: "https://github.com/priyanshu-3/Shishu-Sneh",
     gradient: "from-rose-500/20 via-pink-500/10 to-transparent",
-    emoji: "🧬",
+    emoji: "👶",
   },
-
   {
-    title: "Cura – Full-Stack Health App",
+    title: "Advanced Skin Cancer Detection System",
     description:
-      "Large-scale full-stack application built with JavaScript and PostgreSQL. Features complex relational data modeling (PLpgSQL stored procedures), a rich front-end UI, and Python-powered services — one of the most substantial projects in the portfolio.",
-    tags: ["JavaScript", "PostgreSQL", "PLpgSQL", "HTML", "CSS", "Python"],
-    github: "https://github.com/priyanshu-3/cura",
+      "Built a full-stack AI web app for skin cancer detection achieving 85-90% test accuracy using ensemble ML models. Designed 10+ Flask REST APIs with SQLAlchemy and a responsive React UI supporting real-time medical image analysis. Implemented XAI, confidence scoring mechanisms, and automated 100% of medical report updates via PDF generation.",
+    tags: ["Python", "Flask", "React", "Tailwind CSS", "XGBoost", "Roboflow API", "SQLAlchemy"],
+    github: "https://github.com/priyanshu-3/SkinCare",
     gradient: "from-violet-500/20 via-purple-500/10 to-transparent",
+    emoji: "🔬",
+  },
+  {
+    title: "Drug Inventory and Supply Chain Tracking System",
+    description:
+      "Engineered a full-stack supply chain platform enabling end-to-end traceability across 6 roles, improving transparency by 35%. Built real-time inventory monitoring features, reducing system stock-outs by 30% and improving fulfillment speed by 25%. Developed secure role-based access controls and analytics dashboards, increasing operational decision-making efficiency by 40%.",
+    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "REST APIs", "Data Visualization"],
+    github: "https://github.com/priyanshu-3/Drug-Inventory",
+    gradient: "from-cyan-500/20 via-blue-500/10 to-transparent",
     emoji: "💊",
   },
-  {
-    title: "LoopTask – Task Management App",
-    description:
-      "A modern task management application built entirely in TypeScript with PostgreSQL for persistent storage. Features a clean, type-safe codebase, shell-scripted automation, and a polished UI for managing tasks effectively.",
-    tags: ["TypeScript", "PostgreSQL", "PLpgSQL", "JavaScript", "CSS"],
-    github: "https://github.com/priyanshu-3/LoopTask",
-    gradient: "from-cyan-500/20 via-blue-500/10 to-transparent",
-    emoji: "✅",
-  },
-  {
-    title: "Travel Agency Website",
-    description:
-      "Beautiful travel agency landing page with smooth animations, responsive design, and interactive destination showcases. Built with vanilla JavaScript and CSS, and deployed live on Vercel.",
-    tags: ["JavaScript", "CSS", "HTML", "Vercel"],
-    github: "https://github.com/priyanshu-3/travelAgency",
-    live: "https://travel-agency-git-main-priyanshus-projects-c12e86e2.vercel.app",
-    gradient: "from-emerald-500/20 via-green-500/10 to-transparent",
-    emoji: "✈️",
-  },
-  {
-    title: "Paper Piano – Air Instrument",
-    description:
-      "Play piano in the air using just your hands and a webcam! Built entirely in Python using computer vision and MediaPipe for real-time hand tracking. Maps hand gestures to piano notes — a creative blend of music and ML.",
-    tags: ["Python", "MediaPipe", "Computer Vision", "OpenCV"],
-    github: "https://github.com/priyanshu-3/PaperPiano",
-    live: "https://paper-piano.vercel.app",
-    gradient: "from-amber-500/20 via-yellow-500/10 to-transparent",
-    emoji: "🎹",
-  },
-  {
-    title: "Hand Gesture Controller",
-    description:
-      "Control your computer using hand gestures captured by webcam. A Python + OpenCV project that uses MediaPipe to recognize and map specific hand poses to system actions — volume, scrolling, and more.",
-    tags: ["Python", "OpenCV", "MediaPipe", "Computer Vision", "Shell"],
-    github: "https://github.com/priyanshu-3/HandGesture",
-    gradient: "from-sky-500/20 via-indigo-500/10 to-transparent",
-    emoji: "🖐️",
-  },
-
 ];
 
 const containerVariants: Variants = {
