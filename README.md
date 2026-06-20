@@ -12,7 +12,7 @@ Modern, professional portfolio website for Priyanshu Mehra showcasing projects, 
 
 ## 🚀 Live Demo
 
-Visit the live portfolio:[[ ](https://www.priyanshu.online)](https://www.priyanshu.online)
+Visit the live portfolio:[(https://www.priyanshu.online)](https://www.priyanshu.online)
 
 ## 📁 Project Structure
 
