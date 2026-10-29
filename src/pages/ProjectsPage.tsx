@@ -103,7 +103,7 @@ export function ProjectsPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid md:grid-cols-2 gap-8"
           >
             {projects.map((project, index) => {
               // Map project to glow colors based on index or title
