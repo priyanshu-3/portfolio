@@ -1,18 +1,19 @@
 import { SplineScene } from "@/components/ui/splite";
 import { Spotlight } from "@/components/ui/spotlight";
 import { BubbleText } from "@/components/ui/bubble-text";
-import { ResumeSection } from "@/components/Resume";
-import { ScrollSection } from "@/components/ScrollSection";
 import { LeetCodeLogoButton } from "@/components/ui/leetcode-button";
 import { CallToActionSection } from "@/components/CallToAction";
 import { Github, Linkedin } from "lucide-react";
-import { Link } from "react-router-dom";
+import { SkillsPage } from "@/pages/SkillsPage";
+import { ProjectsPage } from "@/pages/ProjectsPage";
+import { ContactPage } from "@/pages/ContactPage";
+import { GitHubContributions } from "@/components/GitHubContributions";
 
 export function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section with 3D Background */}
-      <section className="pt-32 pb-20 px-6 min-h-screen flex items-center relative overflow-hidden">
+      <section id="home" className="pt-48 pb-8 px-6 min-h-screen flex items-center relative overflow-hidden">
         {/* Interactive Mouse Spotlight Effect */}
         <Spotlight size={500} className="z-20" />
         
@@ -30,9 +31,6 @@ export function Home() {
         {/* Content */}
         <div className="max-w-7xl mx-auto w-full relative z-10 pointer-events-none">
           <div className="max-w-4xl mx-auto space-y-6 text-center">
-            <p className="text-sm text-muted-foreground uppercase tracking-wider pointer-events-none">
-              Computer Science Student
-            </p>
             <div className="pointer-events-auto">
               <BubbleText 
                 text="Priyanshu Mehra"
@@ -52,12 +50,12 @@ export function Home() {
               >
                 View My Work
               </a>
-              <Link
-                to="/contact"
+              <a
+                href="#contact"
                 className="px-6 py-3 border border-border rounded-lg hover:bg-accent transition-colors hover:scale-105 pointer-events-auto"
               >
                 Start a Project
-              </Link>
+              </a>
             </div>
             <div className="flex items-center justify-center gap-4 pt-8">
               <a
@@ -93,69 +91,20 @@ export function Home() {
         </div>
       </section>
 
-      {/* About Section */}
-      <ScrollSection id="about" className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">About Me</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 rounded-xl border border-border bg-card">
-              <div className="text-3xl font-bold text-primary mb-2">1+</div>
-              <div className="text-muted-foreground">Years Experience</div>
-            </div>
-            <div className="p-6 rounded-xl border border-border bg-card">
-              <div className="text-3xl font-bold text-primary mb-2">5+</div>
-              <div className="text-muted-foreground">Projects Completed</div>
-            </div>
-            <div className="p-6 rounded-xl border border-border bg-card">
-              <div className="text-3xl font-bold text-primary mb-2">8+</div>
-              <div className="text-muted-foreground">Technologies</div>
-            </div>
-          </div>
-        </div>
-      </ScrollSection>
+      {/* Skills */}
+      <SkillsPage />
 
-      {/* Resume Section with Scroll Animation */}
-      <ResumeSection />
+      {/* Projects */}
+      <ProjectsPage />
 
-      {/* Achievements */}
-      <ScrollSection className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">Achievements & Certifications</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="p-6 rounded-xl border border-border bg-card flex items-start gap-4 hover:border-primary/50 transition-colors">
-              <div className="text-3xl">🏆</div>
-              <div>
-                <h3 className="font-semibold mb-2">1st Prize</h3>
-                <p className="text-sm text-muted-foreground">
-                  Code Debugging Session
-                </p>
-              </div>
-            </div>
-            <div className="p-6 rounded-xl border border-border bg-card flex items-start gap-4 hover:border-primary/50 transition-colors">
-              <div className="text-3xl">🥈</div>
-              <div>
-                <h3 className="font-semibold mb-2">2nd Prize</h3>
-                <p className="text-sm text-muted-foreground">
-                  Python for Data Science Workshop
-                </p>
-              </div>
-            </div>
-            <div className="p-6 rounded-xl border border-border bg-card flex items-start gap-4 hover:border-primary/50 transition-colors">
-              <div className="text-3xl">🥈</div>
-              <div>
-                <h3 className="font-semibold mb-2">2nd Prize</h3>
-                <p className="text-sm text-muted-foreground">
-                  "Project and Research Expo 2025" for Skin Cancer Detection Using Deep Learning Techniques
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </ScrollSection>
-
+      {/* GitHub Contributions */}
+      <GitHubContributions />
 
       {/* Call To Action Section */}
       <CallToActionSection />
+
+      {/* Contact */}
+      <ContactPage />
 
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-border">

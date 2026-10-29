@@ -73,14 +73,15 @@ const cardVariants: Variants = {
 
 export function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
+    <div className="bg-gradient-to-b from-background to-secondary/20">
       <ScrollSection id="projects" className="py-32 px-6 min-h-screen">
         <div className="max-w-7xl mx-auto">
 
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
@@ -100,7 +101,8 @@ export function ProjectsPage() {
           <motion.div
             variants={containerVariants}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {projects.map((project, index) => {
@@ -186,7 +188,8 @@ export function ProjectsPage() {
           {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.9 }}
             className="mt-20 text-center"
           >

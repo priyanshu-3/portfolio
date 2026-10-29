@@ -1,6 +1,5 @@
 import { ScrollSection } from "@/components/ScrollSection";
 import { ArrowRight, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { getCalApi } from "@calcom/embed-react";
 
@@ -33,13 +32,13 @@ export function CallToActionSection() {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <Link
-            to="/contact"
+          <a
+            href="#contact"
             className="flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full text-lg font-medium hover:bg-primary/90 transition-all hover:scale-105 shadow-lg hover:shadow-xl"
           >
             Start a project
             <ArrowRight className="w-5 h-5" />
-          </Link>
+          </a>
           
           <button
             data-cal-link="priyanshu_3"

@@ -1,32 +1,26 @@
-import { Home, User, Code2, Mail, FolderKanban } from "lucide-react";
+import { Home, Code2, Mail, FolderKanban } from "lucide-react";
 import { NavMenu } from "@/components/ui/menu-hover-effects";
 
 export function Navigation() {
   const navItems = [
     {
       name: "Home",
-      url: "/",
+      url: "#home",
       icon: Home,
     },
     {
-      name: "About",
-      url: "/#about",
-      icon: User,
-      isExternal: true,
-    },
-    {
       name: "Skills",
-      url: "/skills",
+      url: "#skills",
       icon: Code2,
     },
     {
       name: "Projects",
-      url: "/projects",
+      url: "#projects",
       icon: FolderKanban,
     },
     {
       name: "Contact",
-      url: "/contact",
+      url: "#contact",
       icon: Mail,
     },
   ];
